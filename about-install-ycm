@@ -1,4 +1,11 @@
 see YCM doc: https://github.com/Valloric/YouCompleteMe
 Perhaps will occur missing python libiarys error, try run cmd like below:
-	$ cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/pytho
+	$ cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/python2.7
 where -DPYTHON_INCLUDE_DIR and -DPYTHON_LIBRARY replace with your python lib path
+
+Perhaps ouccur python libiarys can not find error when run YCM ./install.py, try below solution:
+	1) open source file vi ~/.vim/bundle/YouCompleteMe/third_party/ycmd/build.py
+	2) modify FindPythonLibrariesOnLinux function as below:
+	   def FindPythonLibrariesOnLinux():
+			return ["/usr/include/python2.7","/usr/lib/python2.7"]
+	where the python path determined by your real path
