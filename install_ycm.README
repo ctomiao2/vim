@@ -29,7 +29,10 @@ cp ~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py ~/.v
 
 # 在~/.vimrc中添加vim配置
 let g:ycm_server_python_interpreter='/usr/bin/python'
+
+############### 根据当前机器的情况将相应头文件目录加到这个文件
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+
 
 # vi hello.c，若无问题就能正常补全了
 
