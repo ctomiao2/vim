@@ -7,9 +7,15 @@ cd ~/.vim/bundle/YouCompleteMe
 py2_installed=$(dpkg -s python2.7 | grep "install ok installed")
 py3_installed=$(dpkg -s python3 | grep "install ok installed")
 
-if [ "$py2_installed" == "" && "$py3_installed" == ""];
+if [ "$py2_installed" == "" && "$py3_installed" == "" ];
 then
     sudo apt-get install python2.7
+fi
+
+cmake_installed=$(dpkg -s cmake | grep "install ok installed")
+if [ "$cmake_installed" == "" ];
+then
+    sudo apt-get install cmake
 fi
 
 sudo apt-get install python-dev python3-dev
